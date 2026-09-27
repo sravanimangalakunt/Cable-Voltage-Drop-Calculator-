@@ -1,0 +1,25 @@
+# Cable Voltage Drop Calculator
+
+print("Cable Voltage Drop Calculator")
+
+V = float(input("Enter supply voltage (V): "))
+I = float(input("Enter load current (A): "))
+L = float(input("Enter cable length (m): "))
+R = float(input("Enter cable resistance (Ohm/km): "))
+
+# Convert length from meter to kilometer
+length_km = L / 1000
+
+# Voltage drop
+voltage_drop = I * R * length_km
+
+# Load voltage
+load_voltage = V - voltage_drop
+
+# Percentage voltage drop
+percentage_drop = (voltage_drop / V) * 100
+
+print("\n--- Results ---")
+print("Voltage Drop =", round(voltage_drop, 2), "V")
+print("Load Voltage =", round(load_voltage, 2), "V")
+print("Percentage Voltage Drop =", round(percentage_drop, 2), "%")
